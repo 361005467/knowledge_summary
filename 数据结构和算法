@@ -1,0 +1,60 @@
+数据结构
+二叉树
+
+二叉搜索树
+没旋转，有可能退化成单链表
+avl树
+任意节点的左右两个子树的高度差的绝对值不超过1
+红黑树
+最长路径的长度 小于等于 最短路径的两倍
+
+avl树更平衡，搜索更快，插入删除比红黑树慢。worst-case都是log n，均摊时间复杂度不一样。 红黑树insert delete 均摊 o(1)
+https://stackoverflow.com/questions/13852870/red-black-tree-over-avl-tree
+
+完全二叉树 
+没顺序，（k-1）层的节点是满的，最后一层的节点都往左边靠
+
+b树 
+每个节点存放多个值和多个子节点指针
+节点是数据而且有序，支持顺序范围搜索
+https://blog.csdn.net/wyqwilliam/article/details/82935922
+https://www.cnblogs.com/lwhkdash/p/5313877.html
+算法
+排序
+快速排序
+调整：先从右边扫，呼唤，再从这边扫；直到i==j
+https://www.runoob.com/w3cnote/quick-sort.html
+归并排序
+递归直到l=r，然后对两个排好序的数组排序
+https://www.jianshu.com/p/33cffa1ce613
+插入排序
+在无序元素插入有序数组中，然后移动元素
+https://www.jianshu.com/p/d2cf77f78b3e
+选择排序：从无序数组中找最小元素，然后和无序的第一个交换
+冒泡排序： 两两比较转换，把大数往最右边移动
+https://www.jianshu.com/p/648d87dc4cfc
+堆排序：建堆（o(n)））,顶部跟尾部互换，调整堆（单次log（n））
+
+第k大数
+堆排序：建堆+k次调整，o(n)+ k.lg(n)
+归并：各自分开找第k大，然后合起来再找第k大
+合并排序链表
+新建链表 两两比较，跟归并排序一样
+递归，取两list的第一个元素比较，取小的一个，然后将剩下两个list递归
+https://blog.csdn.net/qq_17550379/article/details/80668769
+
+链表是否有环
+快慢指针前进，如果有圈会相遇，没有就直到空指针结束
+lru算法 哈希+双向链表
+least recently used
+intuition:  单向链表，新元素插链尾
+双向是为了删除O(1)
+哈希为了查找o(1)
+https://www.cnblogs.com/kyoner/p/11179766.html
+lru-k
+需要维护每个key的访问次数
+哈希+双向链表
+https://www.jianshu.com/p/c4e4d55706ff
+
+循环队列
+https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/
