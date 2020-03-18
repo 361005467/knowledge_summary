@@ -23,7 +23,7 @@ ACID
 隔离级别
 - read uncommitted: 未commit的数据也能读
     - 产生脏读：读了未commit并且rollback的数据
-- read commited: commit过的数据就能读
+- read commited: commit过的数据就能读.每次读都生成快照
     - 产生不可重复读：读同一条数据两次结果不一样
     - 产生幻读： select全表，第二次比第一次多了数据
 - repeateable read: 开始事务时，生成快照，数据都从快照读
