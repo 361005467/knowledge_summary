@@ -9,7 +9,6 @@
 
 - 同步 io： 当前线程读写数据
 - 异步 io： 由其他线程读数据，完成后通知
-  https://blog.51cto.com/yaocoder/1308899
 
 同步调用: 等待事件通知和读写数据的时候，阻塞线程，直到数据读取/发送完毕
 
@@ -34,13 +33,6 @@ epoll
 - epoll 实现原理 - epoll 往网络设备注册回调函数
   设备有中断事件，往就绪列表中插入 fd，唤醒 epoll_wait
   轮询就绪列表
-
-epollshot： 多线程监听同一个描述符时，可结合 epollshot，保证每个事件只唤醒一个线程
-
-SO_REUSEPORT: 允许多 socket 绑定同一个 port
-解决惊群，根据四元祖来 hash，同一客户请求 hash 到固定到 socket，避免一个完整数据分散到多个线程里
-
-SO_REUSEADDR 绑定处于 time_wait 的端口
 
 # 网络分层
 
