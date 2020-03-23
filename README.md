@@ -10,5 +10,5 @@
   - [计算机网络](fundamental/network.md)
   - [数据结构和算法](fundamental/data_structure_algorithm.md)
 - 编程语言
-  - [c++](language/cpp.md)
-  - [gdb](language/gdb.md)
+  - [c++](langguage/cpp.md)
+  - [gdb](langguage/gdb.md)
