@@ -38,11 +38,21 @@
 
 第 k 大数
 
-- 堆排序：建堆+k 次调整，o(n)+ k.lg(n)
+- 最小堆法：建堆+k 次调整，o(n)+ k.lg(n)
 - 归并：各自分开找第 k 大，然后合起来再找第 k 大
+
 
 lru
 
 - 哈希+双向链表
 - 双向是为了删除 O(1)，哈希为了查找 o(1)
 - lru-k：需要维护每个 key 的访问次数
+
+统计大文件词频
+- 逐行读，将单词写到小文件。将相同的单词哈希写到同一个文件
+
+
+cmd
+- split -l LINENUMBER FILENAME
+- seq START_NUM INTERVAL END_NUM
+- strace -p PROCESS_NAME
