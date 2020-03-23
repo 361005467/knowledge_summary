@@ -8,7 +8,7 @@
   - [数据库](fundamental/db.md)
   - [操作系统](fundamental/os.md)
   - [计算机网络](fundamental/network.md)
-  - [数据结构和算法](fundamental/data_structure_algorithm.md.md)
+  - [数据结构和算法](fundamental/data_structure_algorithm.md)
 - 编程语言
   - [c++](language/cpp.md)
   - [gdb](language/gdb.md)
