@@ -4,6 +4,8 @@
 - find DIRPATH -type f -name FILENAME
 - grep -rn "string to be searched" DIR
 - tail -f path | grep -v -E 'IGNORE_TEXT|lTEXT2|TEXT3'
+- split -l LINENUMBER FILENAME
+- seq START_NUM INTERVAL END_NUM
 
 网络
 
@@ -17,3 +19,7 @@
 - 查句柄  ls -lrt /proc/pid/fd
 - pidof PROCESS_NUM
 - 查子进程 cat /proc/A_pid/limits
+- 进程打开句柄数 lsof -n|awk '{print \$2}'|sort|uniq -c|sort -nr
+- 查看网络句柄数 lsof |grep IPv4|wc -l lsof |grep TCP|wc -l
+- 查 cpu 内存 top
+- strace -p PROCESS_NAME
