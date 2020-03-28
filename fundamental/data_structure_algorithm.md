@@ -52,7 +52,4 @@ lru
 - 逐行读，将单词写到小文件。将相同的单词哈希写到同一个文件
 
 
-cmd
-- split -l LINENUMBER FILENAME
-- seq START_NUM INTERVAL END_NUM
-- strace -p PROCESS_NAME
+
