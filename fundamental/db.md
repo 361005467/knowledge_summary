@@ -33,7 +33,7 @@ ACID
   - 产生脏读：读了未 commit 并且 rollback 的数据
 - read commited: commit 过的数据就能读.每次读都生成快照
   - 产生不可重复读：读同一条数据两次结果不一样
-  - 产生幻读： 前后两次 select，第二次比第一次多了数据（用间隙锁解决）
+  - 产生幻读： 前后两次 select，第二次比第一次多了数据（用Next-Key Lock解决）
 - repeateable read: 开始事务时，生成快照，数据都从快照读
 - serailization： 加锁
 
@@ -49,9 +49,14 @@ MVCC：通过数据版本来处理并发场景。 每条数据都会有历史版
   - select ... lock in share mode，select ... for update insert，update，delete
 
 锁
+- 表锁：innodb 上，没索引就锁全表
+- 行锁：innodb 上，设置索引的字段可以加行锁
+    - Record Lock：单个行记录上的锁
+    - Gap Lock：间隙锁（行之间的锁）。锁定一个范围，但不包括记录本身。目的，是为了防止同一事务的两次当前读，出现幻读的情况
+    - Next-Key Lock：前两个锁的结合，解决幻读
 
-- 行锁：innodb 上，设置索引的字段可以加行锁，
-- 表锁：没索引就锁全表
+
+
 - 悲观锁
   - select for update
   - 颗粒度大，性能弱
@@ -122,7 +127,7 @@ redis
 - 哈希，开链法，桶+链表
 - 链表
 - 集合
-- 有序集合：跳表，二分查找链表。范围查询 o（logn）
+- 有序集合：跳表，二分查找链表。 相比红黑树，跳表支持高效范围查询 o（logn）
 
 rehash
 
