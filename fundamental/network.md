@@ -107,7 +107,7 @@ timewait
 
 zero copy
 
-- zero copy 是指数据传输过程避免了 cpu 拷贝
+- zero copy 是指数据传输过程避免了 cpu 拷贝。采用了dma copy来拷贝数据
   考虑场景： 从磁盘读取数据，然后网络发送
 
 方法 1: 4 copy
