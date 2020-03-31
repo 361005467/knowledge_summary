@@ -21,7 +21,7 @@
 
 - 共享内存
   - 多个进程映射虚拟地址到同一块物理地址
-  - 需要 semaphore 来加锁同步
+  - 需要 互斥量 来加锁同步 （pthread_mutexattr_setpshared）
 
 虚拟地址
 
