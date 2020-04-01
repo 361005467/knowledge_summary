@@ -137,19 +137,25 @@ xss：往往网页插入恶意脚本
 
 # 备注
 
+## tcp
 RST：异常复位，丢弃数据
 - 例子：发送方发送数据到为开启监听的端口，服务器会返回rst
 - a发送rst，b会返回 connect reset by peer
 - rst攻击，获取端口和序列号，伪装成发送者，发生rst/syn，导致连接断开
 
-网络分层
+EPIPE：写数据到closed的socket
+
+随机序列号：1.防止旧连接的数据 2.防止攻击
+
+## 网络分层
 
 - 数据链路层: 网络设备之间的传输
 - 网络层: 找路，走哪些路由
 - 传输层：tcp/udp
 - 应用层：http
 
-zero copy： 数据传输过程避免了 cpu 拷贝。采用了dma copy来拷贝数据
+## zero copy
+zero copy：数据传输过程避免了 cpu 拷贝。采用了dma copy来拷贝数据
 
 考虑场景： 从磁盘读取数据，然后网络发送
 
