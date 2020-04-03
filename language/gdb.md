@@ -13,7 +13,7 @@
 多线程调试
 - info threads 展示所有线程
 - set scheduler-locking on 设置只运行当前线程
--thread NUMBER 切换到 NUMBER 线程
+- thread NUMBER 切换到 NUMBER 线程
 
 多进程调试
 - set follow-fork-mode parent/children 调试父进程/子进程

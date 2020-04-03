@@ -24,7 +24,7 @@
 - 进程打开句柄数 lsof -n|awk '{print \$2}'|sort|uniq -c|sort -nr
 - 查看网络句柄数 lsof |grep IPv4|wc -l lsof |grep TCP|wc -l
 - 查 cpu 内存 top: virt 分配内存，res 使用内存，shm 共享内存
-- strace -p PROCESS_NAME
+- 查系统调用 strace -p PROCESS_NAME
 
 git
 
