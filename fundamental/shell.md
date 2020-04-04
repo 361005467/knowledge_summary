@@ -1,6 +1,8 @@
 文本处理
 
 - sed -i '/{MATCHTEXT}/a\{APPENDTEXT}' FILENAME
+- sed -n '5,10p' filename
+- cat filename| head -n 3000 | tail -n +1000
 - find DIRPATH -type f -name FILENAME
 - grep -rn "string to be searched" DIR
 - tail -f path | grep -v -E 'IGNORE_TEXT|lTEXT2|TEXT3'

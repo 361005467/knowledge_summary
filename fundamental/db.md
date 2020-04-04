@@ -39,7 +39,7 @@ ACID
   - 产生脏读：读了未 commit 并且 rollback 的数据
 - read commited: commit 过的数据就能读.每次读都生成快照
   - 产生不可重复读：读同一条数据两次结果不一样
-  - 产生幻读： 前后两次 select，第二次比第一次多了数据（用 Next-Key Lock 解决）
+  - 产生幻读： 前后两次 select，第二次比第一次多了数据（用 间隙锁 解决）
 - repeateable read: 开始事务时，生成快照，数据都从快照读
 - serailization： 加锁
 
@@ -52,7 +52,7 @@ MVCC：通过数据版本来处理并发场景。 每条数据都会有历史版
 - 快照读，读快照的数据
   - 简单的 select 操作(不包括 select ... lock in share mode, select ... for update)
 - 当前读：读最新，加锁
-  - select ... lock in share mode，select ... for update insert，update，delete
+  - select ... lock in share mode，select ... for update
 
 锁
 
