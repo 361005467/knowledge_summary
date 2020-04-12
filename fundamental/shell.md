@@ -34,3 +34,4 @@ git
 - git branch -r
 - git diff ecc1f4d65d30aae1d298d15cdc957e4c764f491a HEAD
 - git reset --hard HEAD~1
+- git push --force test-all-iteration
